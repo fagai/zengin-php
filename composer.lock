@@ -4,8 +4,18 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e177a14117ad53db280a1fc367f502da",
-    "packages": [],
+    "content-hash": "381fadc6e4a201a0b2882859969900d7",
+    "packages": [
+        {
+            "name": "zengin-code/source-data",
+            "version": "dev-master",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/zengin-code/source-data/archive/master.zip"
+            },
+            "type": "library"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -1577,7 +1587,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "zengin-code/source-data": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

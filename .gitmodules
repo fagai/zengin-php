@@ -1,4 +1,0 @@
-[submodule "zengin"]
-	path = zengin
-	url = git@github.com:zengin-code/source-data.git
-	branch = master
