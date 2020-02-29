@@ -10,12 +10,13 @@ jobs:
         php-versions: [7.2, 7.3, 7.4]
     steps:
       - uses: actions/checkout@v1
+        with:
+          submodules: recursive
       - name: Setup PHP, with composer and extensions
         uses: shivammathur/setup-php@v1
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: mbstring, dom, zip, psr
-          tools: prestissimo
+          extensions: mbstring, dom, zip
       - name: Get Composer Cache Directory
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
