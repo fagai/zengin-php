@@ -30,4 +30,4 @@ jobs:
       - name: run phpunit
         run: vendor/bin/phpunit
       - name: run phpcs
-          run: composer cs
+        run: composer cs
