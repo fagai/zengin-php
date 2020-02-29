@@ -4,7 +4,7 @@ namespace Fagai\ZenginCode;
 
 class ZenginCode
 {
-    public const DATA_PATH = __DIR__ . '/../vendor/zengin-code/source-data/data';
+    public const DATA_PATH = __DIR__ . '/../zengin/data';
 
     /**
      * @param $code

@@ -3,22 +3,8 @@
     "description": "",
     "type": "library",
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "zengin-code/source-data",
-                "version": "dev-master",
-                "dist": {
-                    "url": "https://github.com/zengin-code/source-data/archive/master.zip",
-                    "type": "zip"
-                }
-            }
-        }
-    ],
     "require": {
         "php": "^7.2",
-        "zengin-code/source-data": "dev-master",
         "ext-json": "*"
     },
     "require-dev": {
