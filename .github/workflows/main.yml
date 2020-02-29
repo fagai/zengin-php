@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v1
         with:
           submodules: recursive
+          token: ${{ secrets.GitHub_PAT }}
       - name: Setup PHP, with composer and extensions
         uses: shivammathur/setup-php@v1
         with:
