@@ -1,5 +1,10 @@
 # Zengin-php
 
+[![Actions Status](https://github.com/fagai/zengin-php/workflows/main/badge.svg)](https://github.com/fagai/zengin-php/actions)
+[![Latest Stable Version](https://poser.pugx.org/fagai/zengin-code/v/stable)](https://packagist.org/packages/fagai/zengin-code)
+[![Latest Unstable Version](https://poser.pugx.org/fagai/zengin-code/v/unstable)](https://packagist.org/packages/fagai/zengin-code)
+[![License](https://poser.pugx.org/fagai/zengin-code/license)](https://packagist.org/packages/fagai/zengin-code)
+
 PHP implementation using [zengin-code/source-data](https://github.com/zengin-code/source-data)
 
 # Requirements
