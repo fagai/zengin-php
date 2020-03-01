@@ -1,10 +1,10 @@
 {
     "name": "fagai/zengin-code",
-    "description": "",
+    "description": "PHP implementation to get ZenginCode.",
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": "^7.2",
+        "php": ">=7.2",
         "ext-json": "*",
         "fagai/zengin-data": "dev-master"
     },

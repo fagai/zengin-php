@@ -2,6 +2,8 @@
 
 namespace Fagai\ZenginCode;
 
+use Fagai\ZenginData\Loader;
+
 class ZenginCode
 {
     /**
@@ -18,7 +20,7 @@ class ZenginCode
      */
     public static function getBanks(): array
     {
-        $banks = json_decode(file_get_contents(self::getDataPath() . '/banks.json'), true);
+        $banks = Loader::getBanks();
         foreach ($banks as $code => $bank) {
             $banks[$code] = new Bank(
                 $bank['code'],
@@ -37,7 +39,7 @@ class ZenginCode
      */
     public static function getBranches(string $bankCode): array
     {
-        $branches = json_decode(file_get_contents(self::getDataPath() . '/branches/' . $bankCode . '.json'), true);
+        $branches = Loader::getBranches($bankCode);
         foreach ($branches as $code => $branch) {
             $branches[$code] = new Branch(
                 $branch['code'],
@@ -48,21 +50,5 @@ class ZenginCode
             );
         }
         return $branches;
-    }
-
-    /**
-     * @return string
-     */
-    public static function getDataPath(): string
-    {
-        $path = '/fagai/zengin-data/data';
-
-        // project vendor directory
-        if (file_exists(__DIR__ . '/../../..' . $path)) {
-            return __DIR__ . '/../../..' . $path;
-        }
-
-        // package vendor directory
-        return __DIR__ . '/../vendor' . $path;
     }
 }
