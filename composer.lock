@@ -4,16 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "381fadc6e4a201a0b2882859969900d7",
+    "content-hash": "edfd63ce52f8f5519a5a133ef42c1fee",
     "packages": [
         {
-            "name": "zengin-code/source-data",
+            "name": "fagai/zengin-data",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fagai/source-data.git",
+                "reference": "238abe881ac433aebfe450647b526bce9b86b811"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/zengin-code/source-data/archive/master.zip"
+                "url": "https://api.github.com/repos/fagai/source-data/zipball/238abe881ac433aebfe450647b526bce9b86b811",
+                "reference": "238abe881ac433aebfe450647b526bce9b86b811",
+                "shasum": ""
             },
-            "type": "library"
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2020-03-01T08:32:25+00:00"
         }
     ],
     "packages-dev": [
@@ -1588,7 +1600,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "zengin-code/source-data": 20
+        "fagai/zengin-data": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

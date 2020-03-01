@@ -5,7 +5,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
-        "ext-json": "*"
+        "ext-json": "*",
+        "fagai/zengin-data": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0",
