@@ -4,8 +4,6 @@ namespace Fagai\ZenginCode;
 
 class ZenginCode
 {
-    public const DATA_PATH = __DIR__ . '/../vendor/fagai/zengin-data/data';
-
     /**
      * @param $code
      * @return Bank
@@ -20,7 +18,7 @@ class ZenginCode
      */
     public static function getBanks(): array
     {
-        $banks = json_decode(file_get_contents(self::DATA_PATH . '/banks.json'), true);
+        $banks = json_decode(file_get_contents(self::getDataPath() . '/banks.json'), true);
         foreach ($banks as $code => $bank) {
             $banks[$code] = new Bank(
                 $bank['code'],
@@ -39,7 +37,7 @@ class ZenginCode
      */
     public static function getBranches(string $bankCode): array
     {
-        $branches = json_decode(file_get_contents(self::DATA_PATH . '/branches/' . $bankCode . '.json'), true);
+        $branches = json_decode(file_get_contents(self::getDataPath() . '/branches/' . $bankCode . '.json'), true);
         foreach ($branches as $code => $branch) {
             $branches[$code] = new Branch(
                 $branch['code'],
@@ -50,5 +48,21 @@ class ZenginCode
             );
         }
         return $branches;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getDataPath(): string
+    {
+        $path = '/fagai/zengin-data/data';
+
+        // project vendor directory
+        if (file_exists(__DIR__ . '/../../..' . $path)) {
+            return __DIR__ . '/../../..' . $path;
+        }
+
+        // package vendor directory
+        return __DIR__ . '/../vendor' . $path;
     }
 }
