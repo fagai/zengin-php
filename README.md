@@ -7,6 +7,9 @@
 
 PHP implementation using [zengin-code/source-data](https://github.com/zengin-code/source-data)
 
+[zengin-code/source-data](https://github.com/zengin-code/source-data)をベースにしてPHPライブラリ化しました。
+本家のデータにはcomposerを入れることができなかったため、https://github.com/fagai/source-data を作成して自動更新をしています。
+
 # Requirements
 
 * PHP7.2 or later
