@@ -48,4 +48,61 @@ class Bank
     {
         return $this->getBranches()[$code];
     }
+
+    /**
+     * @param string $keyword
+     * @return array
+     */
+    public function searchBranches(string $keyword): array
+    {
+        $prefix = mb_convert_kana($keyword, 'KA');
+        return array_filter(
+            $this->getBranches(),
+            function ($branch) use ($keyword) {
+                if (strpos($branch->code, $keyword) !== false) {
+                    return true;
+                }
+                if (strpos($branch->name, $keyword) !== false) {
+                    return true;
+                }
+                if (strpos($branch->hiragana, ZenginCode::kanaToUpper($keyword)) !== false) {
+                    return true;
+                }
+                if (strpos($branch->katakana, ZenginCode::kanaToUpper($keyword)) !== false) {
+                    return true;
+                }
+                if (strpos($branch->romaji, strtolower(mb_convert_kana($keyword, 'ak'))) !== false) {
+                    return true;
+                }
+                return false;
+            }
+        );
+    }
+
+    /**
+     * @param string $prefix
+     * @return array
+     */
+    public function searchBranchesForStartWith(string $prefix): array
+    {
+        $prefix = mb_convert_kana($prefix, 'KA');
+        return array_filter(
+            $this->getBranches(),
+            function ($branch) use ($prefix) {
+                if (strpos($branch->name, $prefix) === 0) {
+                    return true;
+                }
+                if (strpos($branch->hiragana, ZenginCode::kanaToUpper($prefix)) === 0) {
+                    return true;
+                }
+                if (strpos($branch->katakana, ZenginCode::kanaToUpper($prefix)) === 0) {
+                    return true;
+                }
+                if (strpos($branch->romaji, strtolower(mb_convert_kana($prefix, 'ak'))) === 0) {
+                    return true;
+                }
+                return false;
+            }
+        );
+    }
 }
