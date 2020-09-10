@@ -6,7 +6,6 @@
     "require": {
         "php": ">=7.2",
         "ext-json": "*",
-        "fagai/zengin-data": "dev-master",
         "ext-mbstring": "*"
     },
     "require-dev": {

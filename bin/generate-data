@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+
+define('SRC_PATH', dirname(__DIR__). '/source-data/data');
+define('DEST_PATH', dirname(__DIR__). '/src/data');
+define('ROOT_PATH', dirname(__DIR__));
+
+$nowVersion = @file_get_contents(SRC_PATH. '/updated_at');
+
+// submoduleを最新に更新
+shell_exec('git submodule update --init 2>&1');
+shell_exec("git submodule foreach 'git pull origin master' 2>&1");
+
+$lastUpdated = file_get_contents(SRC_PATH. '/updated_at');
+
+if ($nowVersion === $lastUpdated) {
+    echo "no update";
+    exit;
+}
+
+$dir = ROOT_PATH. '/src/data';
+if (is_dir($dir) and !is_link($dir)) {
+    $paths = array();
+    while ($glob = glob($dir)) {
+        $paths = array_merge($glob, $paths);
+        $dir .= '/*';
+    }
+    array_map('unlink', array_filter($paths, 'is_file'));
+    array_map('rmdir',  array_filter($paths, 'is_dir'));
+}
+
+mkdir(ROOT_PATH. '/src/data');
+mkdir(ROOT_PATH. '/src/data/branches');
+
+copy(SRC_PATH. '/banks.json', DEST_PATH. '/banks.json');
+foreach(scandir(SRC_PATH. '/branches') as $filename) {
+  if (strpos($filename, '.json') !== false) {
+    copy(SRC_PATH. '/branches/'. $filename, DEST_PATH. '/branches/'. $filename);
+  }
+}
+
+echo "update";
