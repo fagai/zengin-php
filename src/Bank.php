@@ -59,7 +59,7 @@ class Bank
         return array_filter(
             $this->getBranches(),
             function ($branch) use ($keyword) {
-                if (strpos($branch->code, $keyword) !== false) {
+                if (strpos($branch->code, mb_convert_kana($keyword, 'n')) !== false) {
                     return true;
                 }
                 if (strpos($branch->name, $keyword) !== false) {
@@ -89,7 +89,7 @@ class Bank
         return array_filter(
             $this->getBranches(),
             function ($branch) use ($prefix) {
-                if (strpos($branch->name, $prefix) === 0) {
+                if (strpos($branch->name, mb_convert_kana($prefix, 'n')) === 0) {
                     return true;
                 }
                 if (strpos($branch->hiragana, ZenginCode::kanaToUpper($prefix)) === 0) {
