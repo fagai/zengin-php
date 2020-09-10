@@ -46,7 +46,7 @@ class ZenginCode
         return array_filter(
             self::getBanks(),
             function ($bank) use ($keyword) {
-                if (strpos($bank->code, $keyword) !== false) {
+                if (strpos($bank->code, mb_convert_kana($keyword, 'n')) !== false) {
                     return true;
                 }
                 if (strpos($bank->name, $keyword) !== false) {
@@ -76,7 +76,7 @@ class ZenginCode
         return array_filter(
             self::getBanks(),
             function ($bank) use ($prefix) {
-                if (strpos($bank->name, $prefix) === 0) {
+                if (strpos($bank->name, mb_convert_kana($prefix, 'n')) === 0) {
                     return true;
                 }
                 if (strpos($bank->hiragana, ZenginCode::kanaToUpper($prefix)) === 0) {
