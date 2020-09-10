@@ -2,8 +2,6 @@
 
 namespace Fagai\ZenginCode;
 
-use Fagai\ZenginData\Loader;
-
 class ZenginCode
 {
     /**
