@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+define('SRC_PATH', dirname(__DIR__) . '/source-data/data');
+define('DEST_PATH', dirname(__DIR__). '/src/data');
+define('ROOT_PATH', dirname(__DIR__));
+
+$nowVersion = @file_get_contents(SRC_PATH . '/updated_at');
+
+shell_exec("git add ". realpath(DEST_PATH));
+
+shell_exec("git commit -m 'version: " . $nowVersion . "'");
+
+shell_exec("git tag 2.0." . $nowVersion);
