@@ -3,30 +3,77 @@ on:
   pull_request:
   push:
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         php-versions: [7.2, 7.3, 7.4]
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: true
       - name: Setup PHP, with composer and extensions
-        uses: shivammathur/setup-php@v1
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring, dom, zip
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
           restore-keys: ${{ runner.os }}-composer-
+
+      - name: generate zengin-data
+        run: php bin/generate-data
+
       - name: composer install
         run: composer install --no-interaction --no-ansi --no-progress --no-suggest
+
       - name: run phpunit
         run: vendor/bin/phpunit
+
       - name: run phpcs
         run: composer cs
+
+  build-deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: [ 7.4 ]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, dom, zip
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: generate zengin-data
+        run: echo ::set-env name=UPDATE_STATUS::$(php bin/generate-data)
+
+      - name: deploy
+        if: env.UPDATE_STATUS == 'update'
+        run: php bin/commit-tag
+
+      - name: check
+        run: git status
