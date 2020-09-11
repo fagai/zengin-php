@@ -19,6 +19,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring, dom, zip
+          coverage: xdebug
 
       - name: Get Composer Cache Directory
         id: composer-cache
@@ -38,10 +39,15 @@ jobs:
         run: composer install --no-interaction --no-ansi --no-progress --no-suggest
 
       - name: run phpunit
-        run: vendor/bin/phpunit
+        run: vendor/bin/phpunit --coverage-clover coverage.xml
 
       - name: run phpcs
         run: composer cs
+
+      - name: upload coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   build-deploy:
     needs: test
