@@ -4,6 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/fagai/zengin-code/v/stable)](https://packagist.org/packages/fagai/zengin-code)
 [![Latest Unstable Version](https://poser.pugx.org/fagai/zengin-code/v/unstable)](https://packagist.org/packages/fagai/zengin-code)
 [![License](https://poser.pugx.org/fagai/zengin-code/license)](https://packagist.org/packages/fagai/zengin-code)
+[![codecov](https://codecov.io/gh/fagai/zengin-php/branch/master/graph/badge.svg)](https://codecov.io/gh/fagai/zengin-php)
 
 PHP implementation using [zengin-code/source-data](https://github.com/zengin-code/source-data)
 
