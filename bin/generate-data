@@ -8,8 +8,7 @@ define('ROOT_PATH', dirname(__DIR__));
 $nowVersion = @file_get_contents(SRC_PATH. '/updated_at');
 
 // submoduleを最新に更新
-shell_exec('git submodule update --init 2>&1');
-shell_exec("git submodule foreach 'git pull origin master' 2>&1");
+shell_exec("git submodule update --remote --force");
 
 $lastUpdated = file_get_contents(SRC_PATH. '/updated_at');
 
