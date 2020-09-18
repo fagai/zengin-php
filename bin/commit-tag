@@ -7,6 +7,9 @@ define('ROOT_PATH', dirname(__DIR__));
 
 $nowVersion = @file_get_contents(SRC_PATH . '/updated_at');
 
+shell_exec('git config --global user.email bot@example.com');
+shell_exec('git config --global user.name "fagai"');
+
 shell_exec("git add ". realpath(DEST_PATH));
 
 shell_exec("git commit -m 'version: " . $nowVersion . "'");
