@@ -80,7 +80,7 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
 
       - name: generate zengin-data
-        run: echo ::set-env name=UPDATE_STATUS::$(php bin/generate-data)
+        run: echo "UPDATE_STATUS=$(php bin/generate-data)" >> $GITHUB_ENV
 
       - name: deploy
         if: env.UPDATE_STATUS == 'update'
