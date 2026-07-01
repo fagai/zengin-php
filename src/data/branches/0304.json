@@ -302,10 +302,10 @@
   },
   "053":{
     "code":"053",
-    "name":"名古屋駅前５３",
-    "kana":"ナゴヤエキマエゴサン",
-    "hira":"なごやえきまえごさん",
-    "roma":"nagoyaekimaegosan"
+    "name":"名古屋営業５３",
+    "kana":"ナゴヤエイギヨウゴサン",
+    "hira":"なごやえいぎようごさん",
+    "roma":"nagoyaeigiyougosan"
   },
   "054":{
     "code":"054",
@@ -351,10 +351,10 @@
   },
   "061":{
     "code":"061",
-    "name":"なんば６１",
-    "kana":"ナンバロクイチ",
-    "hira":"なんばろくいち",
-    "roma":"nambarokuichi"
+    "name":"なんば営業６１",
+    "kana":"ナンバエイギヨウロクイチ",
+    "hira":"なんばえいぎようろくいち",
+    "roma":"nambaeigiyourokuichi"
   },
   "062":{
     "code":"062",
@@ -386,17 +386,17 @@
   },
   "067":{
     "code":"067",
-    "name":"なんば６７",
-    "kana":"ナンバロクナナ",
-    "hira":"なんばろくなな",
-    "roma":"nambarokunana"
+    "name":"なんば営業６７",
+    "kana":"ナンバエイギヨウロクナナ",
+    "hira":"なんばえいぎようろくなな",
+    "roma":"nambaeigiyourokunana"
   },
   "068":{
     "code":"068",
-    "name":"なんば６８",
-    "kana":"ナンバロクハチ",
-    "hira":"なんばろくはち",
-    "roma":"nambarokuhachi"
+    "name":"なんば営業６８",
+    "kana":"ナンバエイギヨウロクハチ",
+    "hira":"なんばえいぎようろくはち",
+    "roma":"nambaeigiyourokuhachi"
   },
   "069":{
     "code":"069",
@@ -463,10 +463,10 @@
   },
   "078":{
     "code":"078",
-    "name":"大分法人部７８",
-    "kana":"オオイタナナハチ",
-    "hira":"おおいたななはち",
-    "roma":"ooitananahachi"
+    "name":"福岡７８",
+    "kana":"フクオカナナハチ",
+    "hira":"ふくおかななはち",
+    "roma":"fukuokananahachi"
   },
   "079":{
     "code":"079",
@@ -540,10 +540,10 @@
   },
   "090":{
     "code":"090",
-    "name":"福岡",
-    "kana":"フクオカ",
-    "hira":"ふくおか",
-    "roma":"fukuoka"
+    "name":"福岡９０",
+    "kana":"フクオカキユウゼロ",
+    "hira":"ふくおかきゆうぜろ",
+    "roma":"fukuokakiyuuzero"
   },
   "091":{
     "code":"091",
@@ -792,10 +792,10 @@
   },
   "251":{
     "code":"251",
-    "name":"なんば２５１",
-    "kana":"ナンバニゴイチ",
-    "hira":"なんばにごいち",
-    "roma":"nambanigoichi"
+    "name":"なんば営業２５１",
+    "kana":"ナンバエイギヨウニゴイチ",
+    "hira":"なんばえいぎようにごいち",
+    "roma":"nambaeigiyounigoichi"
   },
   "252":{
     "code":"252",
@@ -890,10 +890,10 @@
   },
   "271":{
     "code":"271",
-    "name":"名古屋駅前２７１",
-    "kana":"ナゴヤエキマエニナナイチ",
-    "hira":"なごやえきまえになないち",
-    "roma":"nagoyaekimaeninanaichi"
+    "name":"名古屋営業２７１",
+    "kana":"ナゴヤエイギヨウニナナイチ",
+    "hira":"なごやえいぎようになないち",
+    "roma":"nagoyaeigiyouninanaichi"
   },
   "272":{
     "code":"272",
@@ -918,10 +918,10 @@
   },
   "278":{
     "code":"278",
-    "name":"名古屋駅前２７８",
-    "kana":"ナゴヤエキマエニナナハチ",
-    "hira":"なごやえきまえにななはち",
-    "roma":"nagoyaekimaeninanahachi"
+    "name":"名古屋営業２７８",
+    "kana":"ナゴヤエイギヨウニナナハチ",
+    "hira":"なごやえいぎようにななはち",
+    "roma":"nagoyaeigiyouninanahachi"
   },
   "280":{
     "code":"280",
@@ -1303,10 +1303,10 @@
   },
   "603":{
     "code":"603",
-    "name":"大分法人部６０３",
-    "kana":"オオイタロクゼロサン",
-    "hira":"おおいたろくぜろさん",
-    "roma":"ooitarokuzerosan"
+    "name":"福岡６０３",
+    "kana":"フクオカロクゼロサン",
+    "hira":"ふくおかろくぜろさん",
+    "roma":"fukuokarokuzerosan"
   },
   "607":{
     "code":"607",

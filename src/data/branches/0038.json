@@ -293,6 +293,20 @@
     "hira":"ちゆうでんびじえね",
     "roma":"chiyuudembijiene"
   },
+  "507":{
+    "code":"507",
+    "name":"アシカ",
+    "kana":"アシカ",
+    "hira":"あしか",
+    "roma":"ashika"
+  },
+  "508":{
+    "code":"508",
+    "name":"マンボウ",
+    "kana":"マンボウ",
+    "hira":"まんぼう",
+    "roma":"mambou"
+  },
   "509":{
     "code":"509",
     "name":"ツバキ",
